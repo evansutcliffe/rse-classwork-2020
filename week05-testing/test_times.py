@@ -7,13 +7,17 @@ from pytest import raises
 
 
 @pytest.mark.parametrize("test_input,expected", [
+    
+    # test no overlap
     ([times.time_range("2010-01-12 10:00:00", "2010-01-12 12:00:00"),
     times.time_range("2010-01-13 12:00:00", "2010-01-13 13:00:00")], []),
 
+    # test multiple overlap
     ([times.time_range("2010-01-12 10:00:00", "2010-01-12 10:45:00", 2, 60),
     times.time_range("2010-01-12 10:30:00", "2010-01-12 10:45:00", 2, 60)], 
     [('2010-01-12 10:30:00', '2010-01-12 10:37:00'), ('2010-01-12 10:38:00', '2010-01-12 10:45:00')]),
-
+    
+    # test exact intervals
     ([times.time_range("2010-01-12 10:00:00", "2010-01-12 10:45:00"),
     times.time_range("2010-01-12 10:45:00", "2010-01-12 11:00:00")], 
     []),
