@@ -29,12 +29,12 @@ def test_multiple_intervals():
     expected = [('2010-01-12 10:30:00', '2010-01-12 10:37:00'), ('2010-01-12 10:38:00', '2010-01-12 10:45:00')]
     assert result == expected
 
-# def test_exact_intervals():
-#     interval1 = times.time_range("2010-01-12 10:00:00", "2010-01-12 10:45:00")
-#     interval2 = times.time_range("2010-01-12 10:45:00", "2010-01-12 11:00:00")
-#     #print(interval1)
-#     #print(interval2)
-#     #print(times.compute_overlap_time(interval1, interval2))
-#     result = times.compute_overlap_time(interval1, interval2)
-#     expected = [('2010-01-12 10:30:00', '2010-01-12 10:37:00'), ('2010-01-12 10:38:00', '2010-01-12 10:45:00')]
-#     assert result == expected
+def test_exact_intervals():
+    interval1 = times.time_range("2010-01-12 10:00:00", "2010-01-12 10:45:00")
+    interval2 = times.time_range("2010-01-12 10:45:00", "2010-01-12 11:00:00")
+    #print(interval1)
+    #print(interval2)
+    #print(times.compute_overlap_time(interval1, interval2))
+    result = times.compute_overlap_time(interval1, interval2)
+    expected = []
+    assert result == expected
