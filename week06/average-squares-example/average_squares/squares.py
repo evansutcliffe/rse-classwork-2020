@@ -1,5 +1,6 @@
 """Computation of weighted average of squares."""
 
+# local copy # 
 
 def average_of_squares(list_of_numbers, list_of_weights=None):
     """ Return the weighted average of a list of values.
